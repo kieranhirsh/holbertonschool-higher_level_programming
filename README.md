@@ -1,1 +1,1 @@
-this is my repo for the "Python - Hello, World" project
+this is my repo for the Python projects
