@@ -3,4 +3,4 @@ import string
 
 for i in range(26):
     alphabet = string.ascii_lowercase
-print("{}".format(alphabet))
+print("{}".format(alphabet), end="")
