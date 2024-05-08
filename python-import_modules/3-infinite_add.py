@@ -11,5 +11,5 @@ if __name__ == "__main__":
 
     for i in range(1, len(sys.argv)):
         addition = addition + int(sys.argv[i])
-    
+
     print("{}".format(addition))
