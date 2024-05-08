@@ -11,6 +11,7 @@ if __name__ == "__main__":
         print("{} arguments:".format(len(sys.argv) - 1))
     else:
         print("well, this is awkward")
+        sys.exit()
 
     for i in range(1, len(sys.argv)):
         print("{}: {}".format(i, sys.argv[i]))
