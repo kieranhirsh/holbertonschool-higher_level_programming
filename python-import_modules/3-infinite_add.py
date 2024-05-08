@@ -4,7 +4,7 @@ if __name__ == "__main__":
     import sys
 
     if len(sys.argv) <= 1:
-        print("usage: {} \{numbers to add\}".format(sys.argv[0]))
+        print("0")
         sys.exit()
 
     addition = 0
