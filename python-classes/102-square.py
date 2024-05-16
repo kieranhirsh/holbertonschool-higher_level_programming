@@ -17,7 +17,7 @@ class Square:
         Args:
             size (int): size of the square
         """
-        self.__size = size
+        self.size = size
 
     def __eq__(self, another_Square):
         """

@@ -19,8 +19,8 @@ class Square:
             size (int): size of the square
             position (size 2 tuple of ints): position of the square
         """
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     def __str__(self):
         """
