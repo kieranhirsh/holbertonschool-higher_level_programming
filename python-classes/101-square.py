@@ -29,7 +29,7 @@ class Square:
         return value since print() demands a string be returned
         """
         if self.__size == 0:
-            print("")
+            return ""
         else:
             for y in range(self.__position[1]):
                 print("")
