@@ -77,7 +77,7 @@ class Square:
         """
         return self.__position
 
-    @size.setter
+    @position.setter
     def position(self, value):
         """
         Setter for the position of the square
@@ -85,7 +85,7 @@ class Square:
         Args:
             (size 2 tuple of ints): position of the square
         """
-        if (type(value) is not tuple or
+        if (not isinstance(value, tuple) or
                 len(value) != 2 or
                 not all(isinstance(ii, int) for ii in value) or
                 any(ii < 0 for ii in value)):
