@@ -7,6 +7,7 @@ class Square:
 
     Args:
         size (int): the square's size
+        position (size 2 tuple of ints): position of the square
 
     Attributes (int):
         size: the square's size'''
