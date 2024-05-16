@@ -3,8 +3,8 @@
 
 
 class Square:
-    ''' this class defines a square 
-    
+    ''' this class defines a square
+
     Args:
         size: the square's size
 
