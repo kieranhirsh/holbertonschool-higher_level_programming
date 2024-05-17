@@ -21,6 +21,31 @@ only one argument
     >>> add_integer(2)
     100
 
-a float and an integer
+a float and an int
     >>> add_integer(100.3, -2)
     98
+
+a str
+    >>> add_integer("3")
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+a str
+    >>> add_integer(1.e+999)
+    Traceback (most recent call last):
+        ...
+    OverflowError: cannot convert float infinity to integer
+
+a str
+    >>> add_integer(NaN)
+    Traceback (most recent call last):
+        ...
+    NameError: name 'NaN' is not defined
+
+
+no arguments
+    >>> add_integer()
+    Traceback (most recent call last):
+        ...
+    TypeError: add_integer() missing 1 required positional argument: 'a'
