@@ -1,0 +1,14 @@
+The ``add_integer`` module
+======================
+
+Importing ``add_integer``
+-------------------
+
+    >>> from 0-add_integer import add_integer
+
+Testing ``add_integer``
+-------------------
+
+two integers get added correctly
+    >>> add_integer(0, 0)
+    0
