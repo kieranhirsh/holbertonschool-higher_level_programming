@@ -38,10 +38,10 @@ a str
     OverflowError: cannot convert float infinity to integer
 
 a str
-    >>> add_integer(NaN)
+    >>> add_integer(float('nan'))
     Traceback (most recent call last):
         ...
-    NameError: name 'NaN' is not defined
+    ValueError: cannot convert float NaN to integer
 
 
 no arguments
