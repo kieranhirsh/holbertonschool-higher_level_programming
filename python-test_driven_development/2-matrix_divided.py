@@ -16,8 +16,7 @@ def matrix_divided(matrix, div):
     matrix_length = len(matrix[0])
     for ii in range(len(matrix)):
         if matrix_length != len(matrix[ii]):
-            raise TypeError("matrix must be a matrix (list of lists) \
-                             of integers/floats")
+            raise TypeError("Each row of the matrix must have the same size")
         new_matrix.append([])
         for jj in range(len(matrix[ii])):
             new_matrix[ii].append(round(matrix[ii][jj] / div,2))
