@@ -11,57 +11,57 @@ Testing ``matrix_divided`` - matrix is ints
 
 positive int divisor
     >>> matrix_divided([[1, 2], [3, 4]], 3)
-    [[0, 0], [1, 1]]
+    [[0.33, 0.67], [1.0, 1.33]]
 
 negative int divisor
     >>> matrix_divided([[1, 2], [3, 4]], -3)
-    [[0, 0], [-1, -1]]
+    [[-0.33, -0.67], [-1.0, -1.33]]
 
 positive float divisor
     >>> matrix_divided([[1, 2], [3, 4]], 3.)
-    [[0.33, 0.66], [1.0, 1.33]]
+    [[0.33, 0.67], [1.0, 1.33]]
 
 negative float divisor
     >>> matrix_divided([[1, 2], [3, 4]], -3.)
-    [[-0.33, -0.66], [-1.0, -1.33]]
+    [[-0.33, -0.67], [-1.0, -1.33]]
 
 Testing ``matrix_divided`` - matrix is floats
 -------------------
 
 positive int divisor
     >>> matrix_divided([[1., 2.], [3., 4.]], 3)
-    [[0.33, 0.66], [1.0, 1.33]]
+    [[0.33, 0.67], [1.0, 1.33]]
 
 negative int divisor
     >>> matrix_divided([[1., 2.], [3., 4.]], -3)
-    [[-0.33, -0.66], [-1.0, -1.33]]
+    [[-0.33, -0.67], [-1.0, -1.33]]
 
 positive float divisor
     >>> matrix_divided([[1., 2.], [3., 4.]], 3.)
-    [[0.33, 0.66], [1.0, 1.33]]
+    [[0.33, 0.67], [1.0, 1.33]]
 
 negative float divisor
     >>> matrix_divided([[1., 2.], [3., 4.]], -3)
-    [[-0.33, -0.66], [-1.0, -1.33]]
+    [[-0.33, -0.67], [-1.0, -1.33]]
 
 Testing ``matrix_divided`` - matrix is mix of ints and floats
 -------------------
 
 positive int divisor
     >>> matrix_divided([[1., 2], [3, 4.]], 3)
-    [[0.33, 0], [1, 1.33]]
+    [[0.33, 0.67], [1.0, 1.33]]
 
 negative int divisor
     >>> matrix_divided([[1., 2], [3, 4.]], -3)
-    [[-0.33, 0], [-1, -1.33]]
+    [[-0.33, -0.67], [-1.0, -1.33]]
 
 positive float divisor
     >>> matrix_divided([[1., 2], [3, 4.]], 3.)
-    [[0.33, 0.66], [1.0, 1.33]]
+    [[0.33, 0.67], [1.0, 1.33]]
 
 negative float divisor
     >>> matrix_divided([[1., 2], [3, 4.]], -3.)
-    [[-0.33, -0.66], [-1.0, -1.33]]
+    [[-0.33, -0.67], [-1.0, -1.33]]
 
 Testing ``matrix_divided`` - misc cases
 -------------------
@@ -94,4 +94,4 @@ no arguments
     >>> matrix_divided()
     Traceback (most recent call last):
         ...
-    TypeError: add_integer() missing 2 required positional argument: 'matrix', 'div'
+    TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
