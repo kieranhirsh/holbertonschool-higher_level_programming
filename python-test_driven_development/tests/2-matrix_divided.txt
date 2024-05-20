@@ -1,0 +1,97 @@
+The ``matrix_divided`` module
+======================
+
+Importing ``matrix_divided``
+-------------------
+
+    >>> matrix_divided = __import__('2-matrix_divided').add_integer
+
+Testing ``matrix_divided`` - matrix is ints
+-------------------
+
+positive int divisor
+    >>> matrix_divided([[1, 2], [3, 4]], 3)
+    [[0, 0], [1, 1]]
+
+negative int divisor
+    >>> matrix_divided([[1, 2], [3, 4]], -3)
+    [[0, 0], [-1, -1]]
+
+positive float divisor
+    >>> matrix_divided([[1, 2], [3, 4]], 3.)
+    [[0.33, 0.66], [1.0, 1.33]]
+
+negative float divisor
+    >>> matrix_divided([[1, 2], [3, 4]], -3.)
+    [[-0.33, -0.66], [-1.0, -1.33]]
+
+Testing ``matrix_divided`` - matrix is floats
+-------------------
+
+positive int divisor
+    >>> matrix_divided([[1., 2.], [3., 4.]], 3)
+    [[0.33, 0.66], [1.0, 1.33]]
+
+negative int divisor
+    >>> matrix_divided([[1., 2.], [3., 4.]], -3)
+    [[-0.33, -0.66], [-1.0, -1.33]]
+
+positive float divisor
+    >>> matrix_divided([[1., 2.], [3., 4.]], 3.)
+    [[0.33, 0.66], [1.0, 1.33]]
+
+negative float divisor
+    >>> matrix_divided([[1., 2.], [3., 4.]], -3)
+    [[-0.33, -0.66], [-1.0, -1.33]]
+
+Testing ``matrix_divided`` - matrix is mix of ints and floats
+-------------------
+
+positive int divisor
+    >>> matrix_divided([[1., 2], [3, 4.]], 3)
+    [[0.33, 0], [1, 1.33]]
+
+negative int divisor
+    >>> matrix_divided([[1., 2], [3, 4.]], -3)
+    [[-0.33, 0], [-1, -1.33]]
+
+positive float divisor
+    >>> matrix_divided([[1., 2], [3, 4.]], 3.)
+    [[0.33, 0.66], [1.0, 1.33]]
+
+negative float divisor
+    >>> matrix_divided([[1., 2], [3, 4.]], -3.)
+    [[-0.33, -0.66], [-1.0, -1.33]]
+
+Testing ``matrix_divided`` - misc cases
+-------------------
+
+zero divisor
+    >>> matrix_divided([[1, 2], [3, 4]], 0)
+    Traceback (most recent call last):
+        ...
+    ZeroDivisionError: division by zero
+
+string divisor
+    >>> matrix_divided([[1, 2], [3, 4]], "2")
+    Traceback (most recent call last):
+        ...
+    TypeError: div must be a number
+
+matrix contains non-int/non-float values
+    >>> matrix_divided([[1., 2], ["3", 4.]], -2.)
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+improperly sized matrix
+    >>> matrix_divided([[1, 2], [3, 4, 5]], 2)
+    Traceback (most recent call last):
+        ...
+    TypeError: Each row of the matrix must have the same size
+
+no arguments
+    >>> matrix_divided()
+    Traceback (most recent call last):
+        ...
+    TypeError: add_integer() missing 2 required positional argument: 'matrix', 'div'

@@ -31,18 +31,17 @@ a str
         ...
     TypeError: a must be an integer
 
-a str
+overflow error
     >>> add_integer(1.e+999)
     Traceback (most recent call last):
         ...
     OverflowError: cannot convert float infinity to integer
 
-a str
+NaN
     >>> add_integer(float('nan'))
     Traceback (most recent call last):
         ...
     ValueError: cannot convert float NaN to integer
-
 
 no arguments
     >>> add_integer()
