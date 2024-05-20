@@ -24,8 +24,8 @@ def matrix_divided(matrix, div):
         for jj in range(len(matrix[ii])):
             if (not isinstance(matrix[ii][jj], int) and
                     not isinstance(matrix[ii][jj], float)):
-                raise TypeError("matrix must be a matrix \
-                                (list of lists) of integers/floats")
+                raise TypeError("matrix must be a matrix "
+                                "(list of lists) of integers/floats")
             new_matrix[ii].append(round(matrix[ii][jj] / div, 2))
 
     return new_matrix
