@@ -12,12 +12,6 @@ def matrix_mul(m_a, m_b):
     Returns:
         (list of list of ints/floats): a new matrix, equal to m_a * m_b
     '''
-    if ((len(m_a) > 2 and not all(len(row) == 1 for row in m_a)) or
-            (len(m_b) > 2 and not all(len(row) == 1 for row in m_b)) or
-            (any(len(row) > 2 for row in m_a) and len(m_a) != 1) or
-            (any(len(row) > 2 for row in m_b) and len(m_b) != 1)):
-        raise NotImplementedError("I'm too lazy to multiply matrices larger "
-                                  "than 2x2")
     if len(m_a[0]) != len(m_b):
         raise ValueError("m_a and m_b can't be multiplied")
     if not isinstance(m_a, list):
