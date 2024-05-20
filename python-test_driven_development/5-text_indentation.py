@@ -18,6 +18,6 @@ def text_indentation(text):
         print(text[char], end="")
         if text[char] in newline_chars:
             print("\n")
-            if text[char + 1] == " " or text[char + 1] == "\t":
+            while text[char + 1] == " ":
                 char += 1
         char += 1
