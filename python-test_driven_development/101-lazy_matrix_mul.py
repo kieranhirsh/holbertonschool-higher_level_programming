@@ -33,12 +33,12 @@ def lazy_matrix_mul(m_a, m_b):
         for jj in range(len(m_a[0])):
             if (not isinstance(m_a[ii][jj], int) and
                     not isinstance(m_a[ii][jj], float)):
-                raise TypeError("m_a should contain only integers or floats")
+                raise TypeError("invalid data type for einsum")
     for ii in range(len(m_b)):
         for jj in range(len(m_b[0])):
             if (not isinstance(m_b[ii][jj], int) and
                     not isinstance(m_b[ii][jj], float)):
-                raise TypeError("m_b should contain only integers or floats")
+                raise TypeError("invalid data type for einsum")
 
     new_matrix = np.matmul(m_a, m_b)
 
