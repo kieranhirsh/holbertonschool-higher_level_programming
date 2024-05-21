@@ -49,16 +49,16 @@ m_b is a list
     TypeError: m_b must be a list of lists
 
 m_a is a empty
-    >>> lazy_matrix_mul([], [[1, 2], [3, 4]])
+    >>> lazy_matrix_mul([[]], [[1, 2], [3, 4]])
     Traceback (most recent call last):
         ...
-    ValueError: shapes (0,0) and (2,2) not aligned: 0 (dim 1) != 2 (dim 0)
+    ValueError: shapes (1,0) and (2,2) not aligned: 0 (dim 1) != 2 (dim 0)
 
 m_b is a empty
     >>> lazy_matrix_mul([[1, 2], [3, 4]], [[]])
     Traceback (most recent call last):
         ...
-    ValueError: shapes (2,2) and (0,0) not aligned: 2 (dim 1) != 0 (dim 0)
+    ValueError: shapes (2,2) and (1,0) not aligned: 2 (dim 1) != 1 (dim 0)
 
 m_a contains non-numbers
     >>> lazy_matrix_mul([["1", 2], [3, 4]], [[1, 2], [3, 4]])
@@ -88,7 +88,7 @@ m_a and m_b can't be multiplied
     >>> lazy_matrix_mul([[1, 2], [3, 4]], [[1]])
     Traceback (most recent call last):
         ...
-    ValueError: m_a and m_b can't be multiplied
+    ValueError: shapes (2,2) and (1,1) not aligned: 2 (dim 1) != 1 (dim 0)
 
 missing one argument
     >>> lazy_matrix_mul([[1, 2], [3, 4]])
