@@ -47,6 +47,5 @@ def matrix_mul(m_a, m_b):
                                     "floats")
 
                 new_matrix[ii][jj] += m_a[ii][kk] * m_b[kk][jj]
-            print(new_matrix)
 
     return new_matrix
