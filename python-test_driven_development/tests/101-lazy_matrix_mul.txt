@@ -28,13 +28,13 @@ m_a is a str
     >>> lazy_matrix_mul("[[1., 2], [3, 4]]", [[1., 2], [3, 4]])
     Traceback (most recent call last):
         ...
-    TypeError: m_a must be a list
+    TypeError: Scalar operands are not allowed, use '*' instead
 
 m_b is a str
     >>> lazy_matrix_mul([[1., 2], [3, 4]], "[[1., 2], [3, 4]]")
     Traceback (most recent call last):
         ...
-    TypeError: m_b must be a list
+    TypeError: Scalar operands are not allowed, use '*' instead
 
 m_a is a list
     >>> lazy_matrix_mul([1, 2, 3, 4], [[1, 2], [3, 4]])

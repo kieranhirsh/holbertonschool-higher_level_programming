@@ -14,11 +14,11 @@ def lazy_matrix_mul(m_a, m_b):
         (list of list of ints/floats): a new matrix, equal to m_a * m_b
     '''
     if not isinstance(m_a, list):
-        raise TypeError("m_a must be a list")
+        raise TypeError("Scalar operands are not allowed, use '*' instead")
     if not all(isinstance(row, list) for row in m_a):
         raise TypeError("m_a must be a list of lists")
     if not isinstance(m_b, list):
-        raise TypeError("m_b must be a list")
+        raise TypeError("Scalar operands are not allowed, use '*' instead")
     if not all(isinstance(row, list) for row in m_b):
         raise TypeError("m_b must be a list of lists")
     if m_a == [] or m_a == [[]]:
