@@ -37,15 +37,16 @@ def matrix_mul(m_a, m_b):
         for jj in range(len(m_b[0])):
             new_matrix[ii].append(0)
             for kk in range(len(m_a[0])):
-                if (not isinstance(m_a[ii][jj], int) and
-                        not isinstance(m_a[ii][jj], float)):
+                if (not isinstance(m_a[ii][kk], int) and
+                        not isinstance(m_a[ii][kk], float)):
                     raise TypeError("m_a should contain only integers or "
                                     "floats")
-                if (not isinstance(m_b[ii][jj], int) and
-                        not isinstance(m_b[ii][jj], float)):
+                if (not isinstance(m_b[kk][jj], int) and
+                        not isinstance(m_b[kk][jj], float)):
                     raise TypeError("m_b should contain only integers or "
                                     "floats")
 
                 new_matrix[ii][jj] += m_a[ii][kk] * m_b[kk][jj]
+            print(new_matrix)
 
     return new_matrix
