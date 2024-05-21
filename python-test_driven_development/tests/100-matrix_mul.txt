@@ -15,7 +15,7 @@ both matrices contain only ints
 
 both matrices contain only floats
     >>> matrix_mul([[1., 2.], [3., 4.]], [[1., 2.], [3., 4.]])
-    [[7., 10.], [15., 22.]]
+    [[7.0, 10.0], [15.0, 22.0]]
 
 both matrices contain ints and floats
     >>> matrix_mul([[1., 2], [3, 4]], [[1., 2], [3, 4]])
@@ -32,3 +32,57 @@ m_b is a str
     Traceback (most recent call last):
         ...
     TypeError: m_b must be a list
+
+m_a is a list
+    >>> matrix_mul([1, 2, 3, 4], [[1, 2], [3, 4]])
+    Traceback (most recent call last):
+        ...
+    TypeError: m_a must be a list of lists
+
+m_b is a list
+    >>> matrix_mul([[1, 2], [3, 4]], [1, 2, 3, 4])
+    Traceback (most recent call last):
+        ...
+    TypeError: m_b must be a list of lists
+
+m_a is a empty
+    >>> matrix_mul([], [[1, 2], [3, 4]])
+    Traceback (most recent call last):
+        ...
+    TypeError: m_a can't be empty
+
+m_b is a empty
+    >>> matrix_mul([[1, 2], [3, 4]], [[]])
+    Traceback (most recent call last):
+        ...
+    TypeError: m_b can't be empty
+
+m_a contains non-numbers
+    >>> matrix_mul([["1"], [2]], [[1, 2], [3, 4]])
+    Traceback (most recent call last):
+        ...
+    TypeError: m_a should contain only integers or floats
+
+m_b contains non-numbers
+    >>> matrix_mul([[1, 2], [3, 4]], [["1"], [2]])
+    Traceback (most recent call last):
+        ...
+    TypeError: m_b should contain only integers or floats
+
+m_a has mismatched rows
+    >>> matrix_mul([[1, 2], [2]], [[1, 2], [3, 4]])
+    Traceback (most recent call last):
+        ...
+    TypeError: each row of m_a must be of the same size
+
+m_b has mismatched rows
+    >>> matrix_mul([[1, 2], [3, 4]], [[1, 2], [2]])
+    Traceback (most recent call last):
+        ...
+    TypeError: each row of m_b must be of the same size
+
+m_a and m_b can't be multiplied
+    >>> matrix_mul([[1, 2], [3, 4]], [[1]])
+    Traceback (most recent call last):
+        ...
+    TypeError: m_a and m_b can't be multiplied
