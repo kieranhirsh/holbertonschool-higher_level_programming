@@ -52,37 +52,37 @@ m_a is a empty
     >>> lazy_matrix_mul([], [[1, 2], [3, 4]])
     Traceback (most recent call last):
         ...
-    ValueError: m_a can't be empty
+    ValueError: shapes (0,0) and (2,2) not aligned: 0 (dim 1) != 2 (dim 0)
 
 m_b is a empty
     >>> lazy_matrix_mul([[1, 2], [3, 4]], [[]])
     Traceback (most recent call last):
         ...
-    ValueError: m_b can't be empty
+    ValueError: shapes (2,2) and (0,0) not aligned: 2 (dim 1) != 0 (dim 0)
 
 m_a contains non-numbers
     >>> lazy_matrix_mul([["1", 2], [3, 4]], [[1, 2], [3, 4]])
     Traceback (most recent call last):
         ...
-    TypeError: m_a should contain only integers or floats
+    TypeError: invalid data type for einsum
 
 m_b contains non-numbers
     >>> lazy_matrix_mul([[1, 2], [3, 4]], [["1", 2], [3, 4]])
     Traceback (most recent call last):
         ...
-    TypeError: m_b should contain only integers or floats
+    TypeError: invalid data type for einsum
 
 m_a has mismatched rows
     >>> lazy_matrix_mul([[1, 2], [2]], [[1, 2], [3, 4]])
     Traceback (most recent call last):
         ...
-    TypeError: each row of m_a must be of the same size
+    TypeError: setting an array element with a sequence.
 
 m_b has mismatched rows
     >>> lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], [2]])
     Traceback (most recent call last):
         ...
-    TypeError: each row of m_b must be of the same size
+    TypeError: setting an array element with a sequence.
 
 m_a and m_b can't be multiplied
     >>> lazy_matrix_mul([[1, 2], [3, 4]], [[1]])

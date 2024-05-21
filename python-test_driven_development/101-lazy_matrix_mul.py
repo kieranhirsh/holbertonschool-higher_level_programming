@@ -22,9 +22,9 @@ def lazy_matrix_mul(m_a, m_b):
     if not all(isinstance(row, list) for row in m_b):
         raise TypeError("m_b must be a list of lists")
     if not all(len(row) == len(m_a[0]) for row in m_a):
-        raise TypeError("each row of m_a must be of the same size")
+        raise TypeError("setting an array element with a sequence.")
     if not all(len(row) == len(m_b[0]) for row in m_b):
-        raise TypeError("each row of m_b must be of the same size")
+        raise TypeError("setting an array element with a sequence.")
     if len(m_a[0]) != len(m_b):
         raise ValueError("shapes ({},{}) and ({},{}) not aligned: {} (dim 1) != {} "
                          "(dim 0)".format(len(m_a), len(m_a[0]), len(m_b),
