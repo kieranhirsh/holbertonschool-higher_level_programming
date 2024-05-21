@@ -49,22 +49,22 @@ m_a is a empty
     >>> matrix_mul([], [[1, 2], [3, 4]])
     Traceback (most recent call last):
         ...
-    TypeError: m_a can't be empty
+    ValueError: m_a can't be empty
 
 m_b is a empty
     >>> matrix_mul([[1, 2], [3, 4]], [[]])
     Traceback (most recent call last):
         ...
-    TypeError: m_b can't be empty
+    ValueError: m_b can't be empty
 
 m_a contains non-numbers
-    >>> matrix_mul([["1"], [2]], [[1, 2], [3, 4]])
+    >>> matrix_mul([["1", 2], [3, 4]], [[1, 2], [3, 4]])
     Traceback (most recent call last):
         ...
     TypeError: m_a should contain only integers or floats
 
 m_b contains non-numbers
-    >>> matrix_mul([[1, 2], [3, 4]], [["1"], [2]])
+    >>> matrix_mul([[1, 2], [3, 4]], [["1", 2], [3, 4]])
     Traceback (most recent call last):
         ...
     TypeError: m_b should contain only integers or floats
@@ -85,4 +85,4 @@ m_a and m_b can't be multiplied
     >>> matrix_mul([[1, 2], [3, 4]], [[1]])
     Traceback (most recent call last):
         ...
-    TypeError: m_a and m_b can't be multiplied
+    ValueError: m_a and m_b can't be multiplied
