@@ -91,7 +91,7 @@ missing one argument
     >>> matrix_mul([[1, 2], [3, 4]])
     Traceback (most recent call last):
         ...
-    TypeError: matrix_mul() missing 2 required positional argument: 'm_a'
+    TypeError: matrix_mul() missing 2 required positional argument: 'm_b'
 
 missing two arguments
     >>> matrix_mul()
