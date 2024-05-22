@@ -29,7 +29,7 @@ class Rectangle:
                 rect += "#"
             rect += "\n"
 
-        return rect[:-1] # don't return the final \n because print() adds that automatically
+        return rect[:-1]
 
     @property
     def width(self):
@@ -50,9 +50,9 @@ class Rectangle:
             value (int): width of the rectangle
         """
         if not isinstance(value, int):
-            raise TypeError("size must be an integer")
+            raise TypeError("width must be an integer")
         if value < 0:
-            raise ValueError("size must be >= 0")
+            raise ValueError("width must be >= 0")
 
         self.__width = value
 
@@ -75,15 +75,15 @@ class Rectangle:
             value (int): height of the rectangle
         """
         if not isinstance(value, int):
-            raise TypeError("size must be an integer")
+            raise TypeError("height must be an integer")
         if value < 0:
-            raise ValueError("size must be >= 0")
+            raise ValueError("height must be >= 0")
 
         self.__height = value
 
     def area(self):
         """
-        Method to calculate hte area of the rectangle
+        Method to calculate the area of the rectangle
 
         Returns:
             (int): area of the rectangle
@@ -92,7 +92,7 @@ class Rectangle:
 
     def perimeter(self):
         """
-        Method to calculate hte perimeter of the rectangle
+        Method to calculate the perimeter of the rectangle
 
         Returns:
             (int): perimeter of the rectangle
