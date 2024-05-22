@@ -32,7 +32,7 @@ class Rectangle:
                 rect += "#"
             rect += "\n"
 
-        return rect[:-1]
+        return rect[:-1] # don't return the final \n because print() adds that automatically
 
     def __repr__(self):
         """
