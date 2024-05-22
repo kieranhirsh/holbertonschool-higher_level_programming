@@ -9,16 +9,14 @@ def solve_nqueens(queens, size):
     """
     row = len(queens)
     for col in range(size):
-        if any(col == square[1] for square in queens):
-            continue
         if is_safe(queens, (row, col)):
                 queens.append((row, col))
-                if row + 1 == size:
+                if len(queens) == size:
                     print(queens)
-                    return True
                 else:
-                    if not solve_nqueens(queens, size):
-                        del queens[-1]
+                    solve_nqueens(queens, size)
+
+                del queens[-1]
 
     return False
 
@@ -37,8 +35,11 @@ def is_safe(queens, new_queen):
     pos_diag = new_queen[0] + new_queen[1]
     neg_diag = new_queen[0] - new_queen[1]
 
-    for ii in queens:
-        if pos_diag == ii[0] + ii[1] or neg_diag == ii[0] - ii[1]:
+    for old_queen in queens:
+        if (new_queen[0] == old_queen[0] or
+                new_queen[1] == old_queen[1] or
+                pos_diag == old_queen[0] + old_queen[1] or
+                neg_diag == old_queen[0] - old_queen[1]):
             return False
 
     return True
