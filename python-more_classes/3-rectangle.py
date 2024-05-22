@@ -21,6 +21,9 @@ class Rectangle:
         """
         rect = ""
 
+        if self.width == 0 or self.height == 0:
+            return ""
+
         for ii in range(self.height):
             for jj in range(self.width):
                 rect += "#"
