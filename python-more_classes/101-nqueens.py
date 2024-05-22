@@ -2,7 +2,7 @@
 def solve_nqueens(queens, size):
     """
     recursive function to solve the n quens problem
-    
+
     Arguments:
         queens (list of tuples): a list of queens placed on the board
         size (int): the size of the board
@@ -10,20 +10,21 @@ def solve_nqueens(queens, size):
     row = len(queens)
     for col in range(size):
         if is_safe(queens, (row, col)):
-                queens.append((row, col))
-                if len(queens) == size:
-                    print(queens)
-                else:
-                    solve_nqueens(queens, size)
+            queens.append((row, col))
+            if len(queens) == size:
+                print(queens)
+            else:
+                solve_nqueens(queens, size)
 
-                del queens[-1]
+            del queens[-1]
 
     return False
+
 
 def is_safe(queens, new_queen):
     """
     function to find if a new queen is safe
-    
+
     Arguments:
         queens (list of tuples): a list of queens placed on the board
         new_queen (tuple): location of the new queen
@@ -44,6 +45,7 @@ def is_safe(queens, new_queen):
 
     return True
 
+
 if __name__ == '__main__':
     import sys
     if len(sys.argv) != 2:
@@ -52,7 +54,7 @@ if __name__ == '__main__':
 
     try:
         n = int(sys.argv[1])
-    except:
+    except ValueError:
         print("N must be a number")
         sys.exit(1)
     if n < 4:
