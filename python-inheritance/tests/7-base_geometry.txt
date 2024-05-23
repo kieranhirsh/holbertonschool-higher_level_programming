@@ -53,6 +53,9 @@ value is a list
 
 value is a bool
     >>> BG.integer_validator("value", True)
+    Traceback (most recent call last):
+        ...
+    TypeError: value must be an integer
 
 value is a dict
     >>> BG.integer_validator("value", {1, 2})
