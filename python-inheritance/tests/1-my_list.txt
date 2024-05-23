@@ -1,0 +1,21 @@
+The ``my_list`` module
+======================
+
+Importing ``my_list``
+-------------------
+
+    >>> MyList = __import__('1-my_list').MyList
+
+Testing ``add_integer``
+-------------------
+
+positive integers
+    >>> my_list = MyList()
+    >>> my_list.append(1)
+    >>> my_list.append(4)
+    >>> my_list.append(2)
+    >>> my_list.append(3)
+    >>> my_list.append(5)
+    >>> my_list.print_sorted()
+    >>> print(my_list)
+    [1, 2, 3, 4, 5]
