@@ -39,6 +39,33 @@ value is a string
         ...
     TypeError: value must be an integer
 
+value is a tuple
+    >>> BG.integer_validator("value", (1, 2))
+    Traceback (most recent call last):
+        ...
+    TypeError: value must be an integer
+
+value is a list
+    >>> BG.integer_validator("value", [1, 2])
+    Traceback (most recent call last):
+        ...
+    TypeError: value must be an integer
+
+value is a bool
+    >>> BG.integer_validator("value", True)
+
+value is a dict
+    >>> BG.integer_validator("value", {1, 2})
+    Traceback (most recent call last):
+        ...
+    TypeError: value must be an integer
+
+value is None
+    >>> BG.integer_validator("value", None)
+    Traceback (most recent call last):
+        ...
+    TypeError: value must be an integer
+
 missing one argument
     >>> BG.integer_validator("value")
     Traceback (most recent call last):
