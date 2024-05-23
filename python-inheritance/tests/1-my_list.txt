@@ -5,11 +5,12 @@ Importing ``my_list``
 -------------------
 
     >>> MyList = __import__('1-my_list').MyList
+    >>> print_sorted = __import__('1-my_list').MyList.print_sorted
 
-Testing ``add_integer``
+Testing ``my_list``
 -------------------
 
-positive integers
+checking instantiation and inheritence
     >>> my_list = MyList()
     >>> my_list.append(1)
     >>> my_list.append(4)
@@ -18,3 +19,13 @@ positive integers
     >>> my_list.append(5)
     >>> my_list.print_sorted()
     [1, 2, 3, 4, 5]
+
+positive integers
+    >>> print_sorted([1, 4, 2, 3, 5])
+    [1, 2, 3, 4, 5]
+
+one element is a string
+    >>> print_sorted(["1", 4, 2, 3, 5])
+    Traceback (most recent call last):
+        ...
+    TypeError: '<' not supported between instances of 'int' and 'str'
