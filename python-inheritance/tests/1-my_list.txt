@@ -26,6 +26,10 @@ positive integers
     >>> print_sorted([1, 4, 2, 3, 5])
     [1, 2, 3, 4, 5]
 
+empty list
+    >>> print_sorted([])
+    []
+
 one element is a string
     >>> print_sorted(["1", 4, 2, 3, 5])
     Traceback (most recent call last):
