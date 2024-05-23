@@ -13,7 +13,6 @@ class Square(Rectangle):
 
         Arguments:
             size (int): the size of the square
-            height (int): the width of the rectange
         """
         self.integer_validator("size", size)
         self.__size = size
@@ -26,9 +25,9 @@ class Square(Rectangle):
 
     def area(self):
         """
-        This function calculates the area of a rectangle
+        This function calculates the area of a square
 
         Returns:
-            (int): the area of a rectangle
+            (int): the area of a square
         """
         return self.__size * self.__size
