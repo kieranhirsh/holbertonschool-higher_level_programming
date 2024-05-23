@@ -22,7 +22,7 @@ class Square(Rectangle):
         """
         Method to define the print() behaviour of this class
         """
-        return "[Square] {}/{}".format(self.__width, self.__height)
+        return "[Square] {}/{}".format(self.__size, self.__size)
 
     def area(self):
         """
