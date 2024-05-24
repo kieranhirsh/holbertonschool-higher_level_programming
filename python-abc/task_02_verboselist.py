@@ -43,9 +43,7 @@ class VerboseList(list):
             idx (int): the index to pop
         """
         if idx is None:
-            super().pop(len(self) - 1)
-            print("Removed [{}] from the list.".format(len(self)))
-        else:
-            super().pop(idx)
-            print("Removed [{}] from the list.".format(idx))
+            idx = len(self) - 1
+        super().pop(idx)
+        print("Removed [{}] from the list.".format(self[idx]))
 
