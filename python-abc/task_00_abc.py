@@ -18,7 +18,7 @@ class Dog(Animal):
         """
         Method define the sound associated with a dog
         """
-        return "bark"
+        return "Bark"
 
 class Cat(Animal):
     ''' this class defines a Cat, it inherits from Animal '''
@@ -26,4 +26,4 @@ class Cat(Animal):
         """
         Method define the sound associated with a cat
         """
-        return "meow"
+        return "Meow"
