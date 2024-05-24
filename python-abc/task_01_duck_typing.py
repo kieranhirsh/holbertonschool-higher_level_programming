@@ -29,7 +29,10 @@ class Circle(Shape):
         Args:
             radius (float): radius of the Circle
         """
-        self.radius = radius
+        if radius < 0:
+            self.radius = np.abs(radius)
+        else:
+            self.radius = radius
 
     def area(self):
         """
