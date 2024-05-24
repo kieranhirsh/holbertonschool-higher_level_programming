@@ -45,5 +45,5 @@ class VerboseList(list):
         if idx is None:
             idx = len(self) - 1
         print("Removed [{}] from the list.".format(self[idx]))
-        super().pop(idx)
+        return super().pop(idx)
 
