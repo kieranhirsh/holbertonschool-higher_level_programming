@@ -13,7 +13,8 @@ class CountedIterator():
         ''' next method '''
         self.counter += 1
         try:
-            return next(self.iterator)
+            item = next(self.iterator)
+            return item
         except StopIteration:
             raise StopIteration
 
