@@ -11,8 +11,5 @@ def save_to_json_file(my_obj, filename):
         my_obj: the object
         filename: the text file
     '''
-    try:
-        with open(filename, "w") as file:
-            return file.write(json.dumps(my_obj))
-    except PermissionError:
-        raise PermissionError
+    with open(filename, "w") as file:
+        return file.write(json.dumps(my_obj))
