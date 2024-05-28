@@ -16,8 +16,7 @@ def pascal_triangle(n):
 
     for ii in range(n):
         triangle.append([None] * (ii + 1))
-        triangle[ii][0] = 1
-        triangle[ii][-1] = 1
+        triangle[ii][0] = triangle[ii][-1] = 1
         for jj in range(1, ii):
             triangle[ii][jj] = triangle[ii - 1][jj - 1] + triangle[ii - 1][jj]
 
