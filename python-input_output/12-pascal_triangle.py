@@ -8,7 +8,7 @@ def pascal_triangle(n):
 
     Arguments:
         n (int): the desired Pascal's triangle size
-            
+
     Returns:
         triangle (list of lists of int): Pascal's triangle of size n
     '''
@@ -19,6 +19,6 @@ def pascal_triangle(n):
         triangle[ii][0] = 1
         triangle[ii][-1] = 1
         for jj in range(1, ii):
-            triangle[ii][jj] = (triangle[ii - 1][jj - 1] + triangle[ii - 1][jj])
+            triangle[ii][jj] = triangle[ii - 1][jj - 1] + triangle[ii - 1][jj]
 
     return triangle
