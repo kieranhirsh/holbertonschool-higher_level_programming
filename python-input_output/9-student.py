@@ -11,9 +11,9 @@ class Student():
         initialisation method
 
         Arguments:
-        first_name (str): student's first name
-        last_name (str): student's last name
-        age (int): student's age
+            first_name (str): student's first name
+            last_name (str): student's last name
+            age (int): student's age
         '''
         self.first_name = first_name
         self.last_name = last_name
@@ -24,6 +24,6 @@ class Student():
         This module returns the JSON representation of the class
 
         Returns:
-        JSON representation of the object
+            JSON representation of the object
         '''
         return (self.__dict__)

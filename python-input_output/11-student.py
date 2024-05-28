@@ -40,3 +40,13 @@ class Student():
                 Jason[key] = temp[key]
 
         return Jason
+
+    def reload_from_json(self, json):
+        '''
+        This module that replaces all attributes of a Student instance
+
+        Arguments:
+            json (dict): the new attributes
+        '''
+        for key in json:
+            self.__dict__[key] = json[key]
