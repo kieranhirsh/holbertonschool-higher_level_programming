@@ -54,5 +54,8 @@ class CustomObject:
         Returns:
             filename converted into a CustomObject
         '''
-        with open(filename, "rb") as file:
-            return pickle.load(file)
+        try:
+            with open(filename, "rb") as file:
+                return pickle.load(file)
+        except Exception:
+            return None
