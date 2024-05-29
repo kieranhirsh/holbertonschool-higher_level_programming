@@ -35,7 +35,7 @@ if __name__ == "__main__":
                 size = int(line[-1])
                 code = int(line[-2])
             except ValueError:
-                pass
+                continue
             line_count += 1
 
             file_size += size
