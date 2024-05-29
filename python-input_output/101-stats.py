@@ -33,18 +33,16 @@ if __name__ == "__main__":
             line = line.split()
             try:
                 size = int(line[-1])
-            except ValueError:
+                file_size += size
+            except (ValueError, IndexError):
                 pass
             try:
                 code = int(line[-2])
-            except ValueError:
+                if code in status_codes:
+                    status_codes[code] += 1
+            except (ValueError, IndexError):
                 pass
             line_count += 1
-
-            file_size += size
-
-            if code in status_codes:
-                status_codes[code] += 1
 
             if line_count == 10:
                 print_file_size(file_size)
