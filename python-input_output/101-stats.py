@@ -33,9 +33,12 @@ if __name__ == "__main__":
             line = line.split()
             try:
                 size = int(line[-1])
+            except ValueError:
+                pass
+            try:
                 code = int(line[-2])
             except ValueError:
-                continue
+                pass
             line_count += 1
 
             file_size += size
