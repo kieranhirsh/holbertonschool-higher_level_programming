@@ -48,3 +48,6 @@ if __name__ == "__main__":
         print_file_size(file_size)
         print_status_codes(status_codes)
         raise
+
+    print_file_size(file_size)
+    print_status_codes(status_codes)
