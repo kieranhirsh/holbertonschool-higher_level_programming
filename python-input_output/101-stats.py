@@ -31,8 +31,11 @@ if __name__ == "__main__":
         line_count = 0
         for line in sys.stdin:
             line = line.split()
-            size = int(line[-1])
-            code = int(line[-2])
+            try:
+                size = int(line[-1])
+                code = int(line[-2])
+            except ValueError:
+                pass
             line_count += 1
 
             file_size += size
