@@ -5,16 +5,17 @@
 def print_file_size(file_size):
     '''
     function to print the file size
-    
+
     Arguments:
         file_size (int): the file size
     '''
     print("File size: {}".format(file_size))
 
+
 def print_status_codes(status_codes):
     '''
     function to print the status codes
-    
+
     Arguments:
         status_code (dict): the status codes
     '''
@@ -22,9 +23,17 @@ def print_status_codes(status_codes):
         if status_codes[code] > 0:
             print("{}: {}".format(code, status_codes[code]))
 
+
 if __name__ == "__main__":
     import sys
-    status_codes = {200: 0, 301: 0, 400: 0, 401: 0, 403: 0, 404: 0, 405: 0, 500: 0}
+    status_codes = {200: 0,
+                    301: 0,
+                    400: 0,
+                    401: 0,
+                    403: 0,
+                    404: 0,
+                    405: 0,
+                    500: 0}
     file_size = 0
 
     try:
