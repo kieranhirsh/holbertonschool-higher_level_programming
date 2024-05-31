@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 ''' module documentation '''
-from flask import Flask, jsonify, request, abort
+from flask import Flask, jsonify, request
 from flask_httpauth import HTTPBasicAuth
 from flask_jwt_extended import create_access_token, get_jwt_identity, jwt_required, JWTManager
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -30,13 +30,13 @@ def home():
 @app.route("/login", methods=["POST"])
 def login():
     if request.get_json() is None:
-        abort(400, "Not a JSON")
+        return jsonify({"error": "not a JSON"}), 400
 
     data = request.get_json()
 
     for key in ["username", "password"]:
         if key not in data:
-            abort(400, "Missing attribute {}.".format(key))
+            return jsonify({"error": "Missing attribute {}.".format(key)}), 400
 
     if data["username"] not in users or not check_password_hash(users[data["username"]]["password"], data["password"]):
         return jsonify({"msg": "Bad username or password"}), 401
@@ -90,3 +90,6 @@ def handle_revoked_token_error(err):
 @jwt.needs_fresh_token_loader
 def handle_needs_fresh_token_error(err):
     return jsonify({"error": "Fresh token required"}), 401
+
+if __name__ == "__main__":
+    app.run(debug=True)
