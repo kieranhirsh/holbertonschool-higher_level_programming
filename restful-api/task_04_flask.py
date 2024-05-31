@@ -33,9 +33,8 @@ def add_user():
     if not data:
         return jsonify({"error": "not a JSON"}), 400
 
-    for field in ["username", "name", "age", "city"]:
-        if field not in data:
-            return jsonify({"error": "Missing {}".format(field)}), 400
+    if "username" not in data:
+        return jsonify({"error": "Username is required"}), 400
 
     users[data["username"]] = {
         "name": data["name"],
