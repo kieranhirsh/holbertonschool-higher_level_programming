@@ -22,7 +22,9 @@ def status():
 @app.route("/users/<username>")
 def get_user(username):
     if username in users:
-        return jsonify(users[username])
+        output = users[username]
+        output["username"] = username
+        return jsonify(output)
     else:
         return jsonify({"error": "User not found"}), 404
 
@@ -33,8 +35,9 @@ def add_user():
     if not data:
         return jsonify({"error": "not a JSON"}), 400
 
-    if "username" not in data:
-        return jsonify({"error": "Username is required"}), 400
+    for field in ["username", "name", "age", "city"]:
+        if field not in data:
+            return jsonify({"error": "Missing {}".format(field)}), 400
 
     users[data["username"]] = {
         "name": data["name"],
