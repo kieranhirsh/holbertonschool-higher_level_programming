@@ -20,6 +20,6 @@ if __name__ == "__main__":
     rows = cr.fetchall()
     for row in rows:
         print(row)
-    
+
     cr.close()
     db.close()
