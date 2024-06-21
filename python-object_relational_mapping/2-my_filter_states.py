@@ -17,7 +17,7 @@ if __name__ == "__main__":
     cr = db.cursor()
     cr.execute("SELECT *\
                FROM states\
-               WHERE name = '{}'\
+               WHERE BINARY name = '{}'\
                ORDER BY id ASC;".format(sys.argv[4]))
     rows = cr.fetchall()
     for row in rows:
