@@ -23,6 +23,6 @@ if __name__ == "__main__":
                ORDER BY cities.id ASC;".format(sys.argv[4]))
     rows = cr.fetchall()
     print(", ".join([row[0] for row in rows]))
-    
+
     cr.close()
     db.close()
