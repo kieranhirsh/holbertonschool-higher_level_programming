@@ -15,9 +15,11 @@ if __name__ == "__main__":
     )
 
     cr = db.cursor()
-    cr.execute("SELECT id, name\
+    cr.execute("SELECT cities.id, cities.name, states.name\
                FROM cities\
-               ORDER BY id ASC;")
+               LEFT JOIN states\
+               ON cities.state_id=states.id\
+               ORDER BY cities.id ASC;")
     rows = cr.fetchall()
     for row in rows:
         print(row)
