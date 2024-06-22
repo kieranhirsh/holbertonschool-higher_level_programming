@@ -15,15 +15,14 @@ if __name__ == "__main__":
     )
 
     cr = db.cursor()
-    cr.execute("SELECT cities.id, cities.name, states.name\
+    cr.execute("SELECT cities.name\
                FROM cities\
                LEFT JOIN states\
                ON cities.state_id=states.id\
                WHERE states.name='{}'\
                ORDER BY cities.id ASC;".format(sys.argv[4]))
     rows = cr.fetchall()
-    for row in rows:
-        print(row)
-
+    print(", ".join([row[0] for row in rows]))
+    
     cr.close()
     db.close()
