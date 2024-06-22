@@ -19,7 +19,7 @@ if __name__ == "__main__":
                FROM cities\
                LEFT JOIN states\
                ON cities.state_id=states.id\
-               WHERE states.name={}\
+               WHERE states.name='{}'\
                ORDER BY cities.id ASC;".format(sys.argv[4]))
     rows = cr.fetchall()
     for row in rows:
