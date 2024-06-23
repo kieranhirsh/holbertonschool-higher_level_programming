@@ -15,5 +15,8 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    for row in session.query(State).where(State.name == sys.argv[4]).order_by(State.id).all():
-        print("{}: {}".format(row.id, row.name))
+    state = session.query(State).where(State.name == sys.argv[4]).all()
+    if state is None:
+        print("Nothing")
+    else:
+        print("{}: {}".format(state.id, state.name))
