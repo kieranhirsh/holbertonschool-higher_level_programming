@@ -14,7 +14,7 @@ if __name__ == "__main__":
     )
     Session = sessionmaker(bind=engine)
     session = Session()
-    
+
     modified_state = session.query(State).where(State.id == 2).first()
     modified_state.name = "New Mexico"
     session.add(modified_state)
