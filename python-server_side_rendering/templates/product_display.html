@@ -7,12 +7,13 @@
 </head>
 <body>
     {% include 'header.html' %}
-    {% if source not in ['json', 'csv'] %}
+    {% if source not in ['json', 'csv', 'sql'] %}
         <p>Wrong source</p>
+    {% else %}
         {% if id and data|length == 0 %}
             <p>Product not found</p>
         {% else %}
-            <h2>List of items</h2>
+            <h1>List of items</h1>
             <table>
                 <thead>
                     <tr>
