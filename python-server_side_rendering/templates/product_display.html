@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% include 'header.html' %}
+    {% if source not in ['json', 'csv'] %}
+        <p>Wrong source</p>
+        {% if id and data|length == 0 %}
+            <p>Product not found</p>
+        {% else %}
+            <h2>List of items</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <td>Id</td>
+                        <td>Name</td>
+                        <td>Category</td>
+                        <td>Price</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in data %}
+                    <tr>
+                        <td>{{row["id"]}}</td>
+                        <td>{{row["name"]}}</td>
+                        <td>{{row["category"]}}</td>
+                        <td>{{row["price"]}}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% endif %}
+    {% endif %}
+    {% include 'footer.html' %}
+</body>
+</html>
