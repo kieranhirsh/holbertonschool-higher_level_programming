@@ -1,5 +1,5 @@
-document.getElementById("red_header").onclick = changeColor;
+document.getElementById("red_header").onclick = addClass;
 
-function changeColor() {
+function addClass() {
   document.querySelector('header').classList.add("red")
 }
